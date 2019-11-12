@@ -1,11 +1,11 @@
 <h2>Products</h2>
-<app-search
-[inputList]="products"
-[searchText]=""
-
- >
-  </app-search>
-<div *ngFor="let product of products">
+<!-- <app-search
+[inputList]="products"> 
+  </app-search> -->
+  <div class="md-form">
+  <input type="search" [(ngModel)]="searchText" placeholder="Search text">
+</div>
+<div *ngFor="let product of products | filter: searchText">
   <h3>{{product.name}}</h3>
   <p *ngIf="product.description">
     {{product.description}}

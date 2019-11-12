@@ -6,8 +6,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { SearchComponent } from './search/search.component';
+import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   imports: [
@@ -15,14 +17,16 @@ import { SearchComponent } from './search/search.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-    ])
+    ]),
+    FormsModule
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
+    SearchComponent,
     ProductAlertsComponent,
-    SearchComponent
+    FilterPipe
   ],
   bootstrap: [ AppComponent ]
 })
