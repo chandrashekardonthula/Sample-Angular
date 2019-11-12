@@ -1,15 +1,21 @@
 <h2>Products</h2>
+<app-search
+[inputList]="products"
+[searchText]=""
+
+ >
+  </app-search>
 <div *ngFor="let product of products">
   <h3>{{product.name}}</h3>
   <p *ngIf="product.description">
     {{product.description}}
     </p>
-    <button >Share</button>
-    <app-product-alerts
+  <button >Share</button>
+  <app-product-alerts
     [product]="product" 
     (notify)="onNotify()">
-    </app-product-alerts>
-  </div>
+  </app-product-alerts>
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
